@@ -5,6 +5,7 @@ import java.util.LinkedHashSet;
 import java.util.Set;
 
 public class GeekTrust {
+
 	private static final HashMap<String, String> KINGDOM_VS_EMBLEM = new HashMap<>();
     private static final int ALPHABETS_COUNT = 26, MIN_ALLIES_SUPPORT = 3;
 
@@ -35,7 +36,7 @@ public class GeekTrust {
             Set<String> allies = null;
             while ((inputLineStr = reader.readLine()) != null) {
 
-                inputLineStr = inputLineStr.toUpperCase() ;
+                inputLineStr = inputLineStr.toUpperCase().trim() ;
 
                 // split the input line into 2 parts
                 // first part is kingdom name and second part is secret message
@@ -96,17 +97,14 @@ public class GeekTrust {
      */
     public static String getDecryptedMessage(String secretMessage,int cipherKey){
         String decryptedMessage="";
-
         for (int i = 0; i < secretMessage.length(); i++) {
             int c = secretMessage.charAt(i) - cipherKey;
 
             if( c<65 ){
                 c += ALPHABETS_COUNT ; 
             }
-
             decryptedMessage += (char)c;
         }
-
         return decryptedMessage ;
     }
 
