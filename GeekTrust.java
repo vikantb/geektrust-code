@@ -1,10 +1,12 @@
+package geektrust;
+
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.util.HashMap;
 import java.util.LinkedHashSet;
 import java.util.Set;
 
-public class GeekTrust {
+public class Geektrust {
 
 	private static final HashMap<String, String> KINGDOM_VS_EMBLEM = new HashMap<>();
     private static final int ALPHABETS_COUNT = 26, MIN_ALLIES_SUPPORT = 3;
@@ -25,8 +27,7 @@ public class GeekTrust {
                 return;
             }
 
-            String currentWorkingDirectory = System.getProperty("user.dir");
-            String filePath=currentWorkingDirectory+"\\"+args[0] ;
+            String filePath=args[0] ;
 
             // read the input from a text file
             FileReader file = new FileReader(filePath);
